@@ -9,7 +9,7 @@ import retrofit2.http.POST
 
 interface LoginAPI {
     companion object {
-        private const val BASE_URL = "http://smart.gachon.ac.kr:8080/"
+        private const val BASE_URL = "http://smart.gachon.ac.kr:8080"
 
         private var instance: LoginAPI? = null
 
@@ -26,7 +26,7 @@ interface LoginAPI {
         }
     }
 
-    @POST("WebJSON")
+    @POST("/WebJSON")
     suspend fun login(
         @Body
         request: LoginRequest

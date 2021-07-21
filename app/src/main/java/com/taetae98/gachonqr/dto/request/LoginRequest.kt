@@ -8,8 +8,8 @@ data class LoginRequest(
     @SerializedName("PWD")
     val password: String = "",
 ) {
-    val fsp_cmd = "login"
-    val DVIC_ID = "dwFraM1pVhl6mMn4npgL2dtZw7pZxw2lo2uqpm1yuMs="
-    val fsp_action = "UserAction"
-    val APPS_ID = "com.sz.Atwee.gachon"
+    private val fsp_cmd = "login"
+    private val DVIC_ID = "dwFraM1pVhl6mMn4npgL2dtZw7pZxw2lo2uqpm1yuMs="
+    private val fsp_action = "UserAction"
+    private val APPS_ID = "com.sz.Atwee.gachon"
 }
