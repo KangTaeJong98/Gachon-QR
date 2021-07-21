@@ -2,6 +2,7 @@ package com.taetae98.gachonqr.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import com.taetae98.gachonqr.dto.request.LoginRequest
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -13,4 +14,10 @@ class LoginViewModel @Inject constructor(
     val password = stateHandle.getLiveData("PASSWORD", "")
 
     val isInProgress = stateHandle.getLiveData("IS_IN_PROGRESS", false)
+
+    fun toLoginRequest(): LoginRequest {
+        return LoginRequest(
+            id.value!!, password.value!!
+        )
+    }
 }
