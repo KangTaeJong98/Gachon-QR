@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import com.taetae98.gachonqr.R
 import com.taetae98.gachonqr.databinding.BindingFragment
 import com.taetae98.gachonqr.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_login) {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -18,5 +20,11 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
 
     private fun onCreateSupportActionBar() {
         setSupportActionBar(binding.toolbar)
+    }
+
+    private fun onCreateOnLogin() {
+        binding.setOnLogin {
+
+        }
     }
 }
