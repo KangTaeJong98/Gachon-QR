@@ -3,4 +3,6 @@
     <string name="login">Login</string>
     <string name="id">ID</string>
     <string name="password">Password</string>
+    <string name="invalud_account">Invalid Account</string>
+    <string name="qr">QR</string>
 </resources>

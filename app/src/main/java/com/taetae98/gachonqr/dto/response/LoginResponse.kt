@@ -17,5 +17,6 @@ data class LoginResponse(
 
     companion object {
         const val SUCCESS = "0"
+        const val NOT_FOUND = "9999"
     }
 }
