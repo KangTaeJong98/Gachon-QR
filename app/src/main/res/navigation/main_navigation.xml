@@ -10,5 +10,13 @@
         android:id="@+id/QRFragment"
         android:name="com.taetae98.gachonqr.fragment.QRFragment"
         android:label="@string/qr"
-        tools:layout="@layout/fragment_qr"/>
+        tools:layout="@layout/fragment_qr">
+        <action
+            android:id="@+id/action_QRFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.taetae98.gachonqr.activity.LoginActivity"
+        tools:layout="@layout/activity_login"/>
 </navigation>
