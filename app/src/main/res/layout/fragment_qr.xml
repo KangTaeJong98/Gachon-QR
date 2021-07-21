@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="qr"
-            type="String" />
+            name="viewModel"
+            type="com.taetae98.gachonqr.viewmodel.QRViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,18 +32,32 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
             <com.google.android.material.imageview.ShapeableImageView
-                app:qr="@{qr}"
+                app:qr="@{viewModel.qr}"
+                android:onClick="@{() -> viewModel.performRefresh()}"
                 android:layout_width="250dp"
                 android:layout_height="250dp" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
             android:text="@string/click_to_refresh"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/qr_card_view" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:text="@{viewModel.updateTime}"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/qr_card_view"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Update : 3:27:31 PM"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

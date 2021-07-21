@@ -7,4 +7,9 @@
     <string name="qr">QR</string>
     <string name="click_to_refresh">Click to refresh.</string>
     <string name="connect_internet">Connect Internet</string>
+    <string name="signout">SignOut</string>
+    <string name="logout">Logout</string>
+    <string name="ok">OK</string>
+    <string name="are_you_sure_you_want_to_logout">Are you sure you want to log out?</string>
+    <string name="cancel">Cancel</string>
 </resources>
