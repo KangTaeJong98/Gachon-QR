@@ -5,4 +5,6 @@
     <string name="password">Password</string>
     <string name="invalud_account">Invalid Account</string>
     <string name="qr">QR</string>
+    <string name="click_to_refresh">Click to refresh.</string>
+    <string name="connect_internet">Connect Internet</string>
 </resources>
