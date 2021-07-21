@@ -1,10 +1,9 @@
 package com.taetae98.gachonqr.fragment
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.annotation.StringRes
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -25,6 +24,10 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_login) {
+    init {
+        setHasOptionsMenu(true)
+    }
+
     private val viewModel by viewModels<LoginViewModel>()
     private var loginJob: Job? = null
 
@@ -43,6 +46,22 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
         onCreateOnLogin()
 
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.fragment_login_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.information -> {
+                onInformation()
+                true
+            }
+            else -> {
+                false
+            }
+        }
     }
 
     override fun onCreateViewDataBinding() {
@@ -65,6 +84,16 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
                 Snackbar.make(binding.layout, R.string.connect_internet, Snackbar.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun onInformation() {
+        AlertDialog.Builder(requireContext())
+            .setTitle(R.string.information)
+            .setMessage(R.string.information_dialog_message)
+            .setPositiveButton(R.string.ok) { _, _ ->
+
+            }
+            .show()
     }
 
     private suspend fun performLogin() {
