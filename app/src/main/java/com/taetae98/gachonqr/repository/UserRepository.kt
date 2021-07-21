@@ -23,9 +23,13 @@ class UserRepository @Inject constructor(
         }.first()
     }
 
-    suspend fun setStudentId(studentId: String) {
+    suspend fun setStudentId(studentId: String?) {
         store.edit {
-            it[studentIdKey] = studentId
+            if (studentId == null) {
+                it.remove(studentIdKey)
+            } else {
+                it[studentIdKey] = studentId
+            }
         }
     }
 }

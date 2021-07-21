@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
-import com.taetae98.gachonqr.LOG_TAG
 import com.taetae98.gachonqr.R
+import com.taetae98.gachonqr.TAG
 import com.taetae98.gachonqr.api.LoginAPI
 import com.taetae98.gachonqr.databinding.BindingFragment
 import com.taetae98.gachonqr.databinding.FragmentLoginBinding
@@ -56,7 +56,7 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
             loginJob?.cancel()
             loginJob = CoroutineScope(Dispatchers.IO).launch {
                 val response = loginAPI.login(LoginRequest(viewModel.id.value!!, viewModel.password.value!!)).also {
-                    Log.d(LOG_TAG, it.toString())
+                    Log.d(TAG, it.toString())
                 }
 
                 withContext(Dispatchers.Main) {
@@ -69,7 +69,6 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
                         LoginResponse.NOT_FOUND -> {
                             Snackbar.make(binding.layout, R.string.invalud_account, Snackbar.LENGTH_SHORT).show()
                         }
-
                         else -> {
                             Snackbar.make(binding.layout, response.message, Snackbar.LENGTH_SHORT).show()
                         }

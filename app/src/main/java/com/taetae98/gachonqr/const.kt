@@ -3,6 +3,6 @@ package com.taetae98.gachonqr
 import android.content.Context
 import androidx.datastore.preferences.preferencesDataStore
 
-const val LOG_TAG = "GACHON_QR"
+const val TAG = "GACHON_QR"
 
 val Context.userDataStore by preferencesDataStore(name = "USER")
