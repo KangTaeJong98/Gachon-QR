@@ -1,6 +1,6 @@
 # Gachon-QR
-<img src="./readme/graphic_image_kr.png" alt="Gachon-QR Image" width="30%">
-<img src="./readme/graphic_image_en.png" alt="Gachon-QR Image" width="30%">
+<img src="./readme/graphic_image_kr.png" alt="Gachon-QR Image" width="100%">
+<img src="./readme/graphic_image_en.png" alt="Gachon-QR Image" width="100%">
 가천대학교 QR Code 생성기
 Gachon University Student QR Code Generator
 
@@ -22,8 +22,10 @@ https://play.google.com/store/apps/details?id=com.taetae98.gachonqr
 ## 😊 Introduction
 * #### 한국어
 <img src="./readme/LoginFragment_KR.png" alt="LoginFragment_KR" width="30%"><img src="./readme/InformationDialog_KR.png" alt="InformationDialog_KR" width="30%">
+
 <img src="./readme/QRFragment_KR.png" alt="QRFragment_KR" width="30%"><img src="./readme/LogoutDialog_KR.png" alt="LogoutDialog_KR" width="30%">
 
 * #### English
 <img src="./readme/LoginFragment_EN.png" alt="LoginFragment_EN" width="30%"><img src="./readme/InformationDialog_EN.png" alt="InformationDialog_EN" width="30%">
+
 <img src="./readme/QRFragment_EN.png" alt="QRFragment_EN" width="30%"><img src="./readme/LogoutDialog_EN.png" alt="LogoutDialog_EN" width="30%">
