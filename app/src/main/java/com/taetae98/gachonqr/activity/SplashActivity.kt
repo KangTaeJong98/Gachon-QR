@@ -1,16 +1,31 @@
 package com.taetae98.gachonqr.activity
 
-import androidx.navigation.ui.AppBarConfiguration
-import com.taetae98.gachonqr.R
-import com.taetae98.gachonqr.databinding.ActivitySplashBinding
-import com.taetae98.gachonqr.databinding.BindingActivity
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.taetae98.gachonqr.repository.UserRepository
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class SplashActivity : BindingActivity<ActivitySplashBinding>(R.layout.activity_splash) {
-    override val appBarConfiguration by lazy {
-        AppBarConfiguration(
-            setOf(R.id.splashFragment)
-        )
+class SplashActivity : AppCompatActivity() {
+    @Inject
+    lateinit var userRepository: UserRepository
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        CoroutineScope(Dispatchers.IO).launch {
+            if (userRepository.getStudentId() == null) {
+                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+            } else {
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            }
+
+            finish()
+        }
     }
 }
